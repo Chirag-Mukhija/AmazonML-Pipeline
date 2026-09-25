@@ -1,0 +1,20 @@
+# OS junk
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Challenge dataset (provided separately by organizers; too large for git,
+# several files exceed GitHub's 100MB per-file limit)
+student_resource/dataset/
+
+# Pipeline working directories, generated at run time
+student_resource/work/
+student_resource/models/
+
+# Generated submission artifacts (regenerate via src/run.py + src/package.py)
+student_resource/output/*.tsv
+*_submission.zip
