@@ -8,8 +8,11 @@ __pycache__/
 *.egg-info/
 
 # Challenge dataset (provided separately by organizers; too large for git,
-# several files exceed GitHub's 100MB per-file limit)
-student_resource/dataset/
+# several files exceed GitHub's 100MB per-file limit). No trailing slash so
+# this also matches student_resource/dataset when it's a symlink, which a
+# trailing-slash pattern would NOT ignore.
+/dataset/
+student_resource/dataset
 
 # Pipeline working directories, generated at run time
 student_resource/work/

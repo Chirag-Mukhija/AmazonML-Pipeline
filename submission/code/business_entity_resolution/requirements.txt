@@ -1,0 +1,15 @@
+# core pipeline (tested on Python 3.9, macOS arm64 + Linux x86_64)
+polars==1.36.1
+pyarrow==21.0.0
+numpy==2.0.2
+scipy==1.13.1
+rapidfuzz==3.9.7
+Unidecode==1.3.8
+sparse-dot-topn==1.2.0
+lightgbm==4.6.0
+scikit-learn==1.5.2
+
+# optional: GPU embedding channel (src/embed.py) -- install on the GPU box only
+# torch>=2.2
+# sentence-transformers>=3.0
+# faiss-gpu-cu12   (or faiss-cpu)
