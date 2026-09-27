@@ -101,7 +101,9 @@ python src/run.py all --data-dir ../../dataset --work-dir ../../work --model-dir
 
 - Top LightGBM features by gain on the mini-world: `cx_cand_rank`, `cx_cand_gap`, `atok_cont2`, `ad_tset`, `blk_rank_both`, `nm_partial`, `atok_jac`, `nm_full_tset`, `anum_jac`, `nc_jw`. The two competition features lead, which confirms the value of the one-S1-per-record structure.
 - Per-country validation F0.5 on the v1 mini-world: US 0.9876, India 0.9860.
-- Full-density aggregate (VM run): macro F0.5 = 0.9743, pair recall@5/10/20/40 = 0.828/0.902/0.921/0.932 (see Section 5). [TBD: per-country F0.5 breakdown — run `python src/analyze.py --work-dir work --model-dir models` on the VM and paste the per-country lines here]
+- Full-density aggregate (VM run): macro F0.5 = 0.9743, pair recall@5/10/20/40 = 0.828/0.902/0.921/0.932 (see Section 5).
+- Full-density per-country (validation split, VM run): **US** macro F0.5 = 0.9785 (n=264,120; singleton acc 0.9806, pair precision 0.9958, pair recall 0.9465); **India** macro F0.5 = 0.9681 (n=176,435; singleton acc 0.974, pair precision 0.9934, pair recall 0.9258). India trails US on both precision and recall, consistent with its heavier transliteration/script noise (Section 2.1).
+- Of 94,219 false negatives on the validation split, **52,742 (56%) never reached the model at all** — they were blocking misses, not classifier errors. This is the clearest direct evidence that blocking recall, not the matcher, is the binding constraint on the overall score (see Section 6).
 
 ---
 
